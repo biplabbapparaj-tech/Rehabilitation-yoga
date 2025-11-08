@@ -1,11 +1,13 @@
 version: 0.0
 os: linux
 files:
-  - source: /app
+  - source: /Rehabilitation-yoga
     destination: /var/www/html
-hooks:
-  AfterInstall:
-    - location: scripts/install_dependencies.sh
-      timeout: 300
-    - location: scripts/start_server.sh
-      timeout: 300
+    overwrite: yes
+permissions: 
+- object:  /var/www/html
+pattern : "**"
+owner: ec2-user
+group: ec2-user
+
+
